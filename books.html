@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-  <script src="books.js"></script>
+  <script src="index.js" defer></script>
+  <script src="books.js" defer></script>
 </head>
 
 <body id="books__body">
@@ -42,7 +41,6 @@
       </div>
     </nav>
   </section>
-
   <main id="books__main">
     <section>
       <div class="container">
@@ -50,16 +48,16 @@
           <div class="books__header">
             <h2 class="section__title books__header--title">
               All <span class="purple">Books</span>
-            </h2>
+            </h2> 
             <select id="filter" onchange="filterBooks(event)">
-              <option value="" disabled="" selected="">Sort</option>
+              <option value="" disabled selected>Sort</option>
               <option value="LOW_TO_HIGH">Price, Low to High</option>
               <option value="HIGH_TO_LOW">Price, High to Low</option>
               <option value="RATING">Rating</option>
             </select>
           </div>
           <div class="books">
-            <i class="fas fa-spinner books__loading--spinner"></i>
+            
           </div>
         </div>
       </div>
@@ -87,331 +85,3 @@
 
 
 </body></html>
-=======
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
-.purple {
-    color: #7342d6;
-}
-
-.row {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.row__column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.btn {
-    background-color: #7342d6;
-    color: white; 
-    padding: 12px 24px;
-    font-size: 20px;
-    border-radius: 6px;
-    border: none;
-}
-
-button {
-    cursor: pointer;
-}
-
-button:active {
-    transform: translateY(3px);
-}
-img {
-    width: 100%;
-    height: 100%;
-    max-height: 50vh;
-}
-
-p {
-    line-height: 1.5;
-}
-
-.no-cursor {
-    cursor: not-allowed;
-}
-
-/* 
-NAVIGATION 
-*/
-
-nav {
-height: 80px;
-display: flex;  
-}
-
-.nav__container {
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-}
-
-.logo {
-    width: 160px;
-}
-
-ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-}
-
-.nav__link {
-    margin-left: 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #7342d6;
-    font-weight: bold;
-    padding: 8px   
-}
-
-.nav__link:hover {
-    text-decoration: underline;
-}
-
-.nav__link--primary {
-    border: 2px solid;
-    color: #7342d6;
-    border-radius: 6px;
-}
-
-.nav__link--primary:hover {
-    text-decoration: none;
-}
-
-/* 
-LANDING 
-*/
-
-#landing {
-    background-color: rgb(115, 66, 214, 0.1);
-}
-
-header {
-    height: calc(100vh - 80px);
-}
-
-.header__container {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;  
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.header__description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
-    font-size: 56px; 
-    color: #7342d6;
-    margin-bottom: 24px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 32px;
-    margin-bottom: 32px;
-    text-align: center;
-}
-
-
-
-.header__img--wrapper {
-    padding: 20px;
-    height: 100%;
-    max-height: 50vh;
-    z-index: 2;
-}
-
-.container {
-    padding: 56px 0;
-}
-
-
-/* 
-HIGHLIGHTS 
-*/ 
-
-#highlights {
-    position: relative;
-}
-
-#highlights:before,
-#highlights:after {
-background: url('assets/wave.svg');
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 101vw;
-    height: 12vw;  
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
-#highlights:before {
-    top: 1px; 
-    transform: translateY(-100%);
-}
-#highlights:after {
-    bottom: 1px;
-    transform: translateY(100%) rotate(180deg);
-}
-
-
-
-.highlight__wrapper {
-    display: flex;
-}
-
-.highlight {
-    padding: 0 24px;
-    width: calc(100% / 3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.highlight__para {
-    text-align: center;
-    max-width: 240px;
-}
-
-.highlight__img {
-    border: 2px solid #7342d63c;
-    color: #7342d6;
-    width: 100px;
-    height: 100px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px; 
-    font-size: 32px;
-    margin-bottom: 24px;
-}
-
-.highlight__subtitle {
-    font-size: 24px;
-}
-
-/*  
-FEATURES  
-*/ 
-
-#features {
-    padding-top:  8vw;
-    background-color: rgb(115, 66, 214, 0.1)
-}
-
-.books {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
- 
-.book__img {
-    max-height: 240px;
-    transition: all 300ms ease; 
-    cursor: not-allowed;
-}
-
-.book {
-    width: 25%; 
-    padding: 24px;
-}
-
-.book__img--wrapper {
-    display: flex;
-    margin_bottom: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.book:hover .book__img {
-    transform: scale(1.05);
-}
-
-.book__title {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.book__title:hover {
-    text-decoration: underline;
-    cursor: not-allowed;
-}
-
-.book__ratings {
-    margin-bottom: 8px;
-    color: #fabf2a 
-} 
-
-.book__price--normal{
-text-decoration: line-through;
-padding-right: 6px;
-color: grey;
-}
-
-/* 
-EXPLORE
-*/
-
-#explore {
-      background-color: rgb(115, 66, 214, 0.1);
-}
-
-
-/*
- FOOTER
- */
-
-footer {
-    background-color: #242424;
-}
-
- .footer__logo--img {
-    width: 160px;
-    filter: grayscale(1) invert(1);
- }
-
- .footer__list {
-    margin: 20px 0 24px;
- }
-
- .footer__link, 
- .footer__copyright {
-    color: #fff
- }
-
- .footer__link {
-    padding: 0 8px;
- }
->>>>>>> f06425872fc3f34f37b1cf069928ee95e330d966
